@@ -1,7 +1,51 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
-    <body>
-        <h1>Hello World</h1>
-        <p>I'm hosted with GitHub Pages.</p>
-    </body>
+
+<head>
+    <style>
+        body {
+            background-color: antiquewhite;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>
+        Rongyi Chen
+    </h1>
+    <h2>About me</h2>
+    <p>
+        CST Term 4 Student. Love coding.
+    </p>
+    <h2>Courses Taken (Fall 2019)</h2>
+    <table id="courses">
+
+    </table>
+
+
+    <script>
+        const courses = [
+            { name: 'MATH-3042-0 - App. Probability & Statistics', url: 'https://www.bcit.ca/study/outlines/20193045353' },
+            { name: 'COMP-4989-0 - Selected Topics in AIML', url: 'https://www.bcit.ca/study/outlines/20193044907' },
+            { name: 'COMP-4983-0 - Machine Learning', url: 'https://www.bcit.ca/study/outlines/20193044905' },
+            { name: 'COMP 4735 - Operating Systems', url: 'https://www.bcit.ca/study/outlines/20193035501' },
+            { name: 'BLAW-3600-0 - Computers and the Law', url: 'https://www.bcit.ca/study/outlines/20193035493' },
+            { name: 'COMP-4711-0 - Intro to Internet Software Dev', url: 'https://www.bcit.ca/study/outlines/20193035498' },
+        ];
+        const table = document.querySelector('#courses');
+        courses.forEach(({ name, url }) => {
+            const a = document.createElement('a');
+            a.innerText = name;
+            a.href = url;
+            a.target = '_blank';
+            const td = document.createElement('td');
+            td.appendChild(a);
+            const tr = document.createElement('tr');
+            tr.appendChild(td);
+            table.appendChild(tr);
+        });
+    </script>
+</body>
+
 </html>
