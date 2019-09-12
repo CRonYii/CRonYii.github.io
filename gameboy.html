@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ronyii GameBoy Emulator</title>
+    <style>
+        #root {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .column {
+            flex: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="root">
+        <div class="column">
+            <canvas id="canvas"></canvas>
+            <br />
+            Load ROM: <input id="rom-file" type="file" />
+        </div>
+        <div id="cpu-info" class="column"></div>
+        <div id="tile-viewer-block" class="column">
+            <canvas id="tile-viewer"></canvas>
+        </div>
+    </div>
+    <script src="bundle.js"></script>
+</body>
+
+</html>
