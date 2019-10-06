@@ -1,0 +1,13 @@
+{
+    "embeddings": [
+        {
+            "tensorName": "Simple LSTM Sentiment Classification - COMP4983",
+            "tensorShape": [
+                7928,
+                64
+            ],
+            "tensorPath": "https://cronyii.github.io/comp4983/lstm_sentiment_classification_vecs.tsv",
+            "metadataPath": "https://cronyii.github.io/comp4983/lstm_sentiment_classification_meta.tsv"
+        }
+    ]
+}
