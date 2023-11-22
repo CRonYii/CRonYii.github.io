@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>ronyiic V-Rising</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src="https://cdn.jsdelivr.net/npm/dohjs@latest/dist/doh.min.js"></script>
+</head>
+
+<body>
+    <p id="server_address"></p>
+    <script>
+        const game_port = 56876
+        // create your stub resolver
+        const resolver = new doh.DohResolver('https://1.1.1.1/dns-query');
+
+        // lookup the A records for example.com and log the IP addresses to the console
+        resolver.query('ry-unraid.ronyiic.com', 'A')
+            .then(response => {
+                if (response.answers.length == 0) {
+                    throw Error('No A Record found');
+                }
+                return response.answers[0].data
+            })
+            .then(ip => {
+                const server_address_ele = document.querySelector('p#server_address');
+                server_address_ele.textContent = `${ip}:${56876}`
+            })
+            .catch(err => console.error(err));
+    </script>
+</body>
+
+</html>
