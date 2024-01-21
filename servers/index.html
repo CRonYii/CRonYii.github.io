@@ -4,13 +4,16 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>ronyiic V-Rising</title>
+    <title>ronyiic Servers</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <script src="https://cdn.jsdelivr.net/npm/dohjs@latest/dist/doh.min.js"></script>
 </head>
 
 <body>
-    <p id="server_address"></p>
+    <h4>V-Rising</h4>
+    <p id="v-rising-server"></p>
+    <h4>Palworld</h4>
+    <p id="palworld-server"></p>
     <script>
         const game_port = 56876
         // create your stub resolver
@@ -25,8 +28,8 @@
                 return response.answers[0].data
             })
             .then(ip => {
-                const server_address_ele = document.querySelector('p#server_address');
-                server_address_ele.textContent = `${ip}:${56876}`
+                document.querySelector('p#v-rising-server').textContent = `${ip}:${56876}`
+                document.querySelector('p#palworld-server').textContent = `${ip}:${8211}`
             })
             .catch(err => console.error(err));
     </script>
