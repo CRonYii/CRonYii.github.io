@@ -13,9 +13,10 @@
     <h4>V-Rising</h4>
     <p id="v-rising-server"></p>
     <h4>Palworld</h4>
+    <p id="palworld-server-host"></p>
     <p id="palworld-server"></p>
     <script>
-        const game_port = 56876
+        const server_domain = 'home.ronyiic.com'
         // create your stub resolver
         const resolver = new doh.DohResolver('https://1.1.1.1/dns-query');
 
@@ -29,6 +30,7 @@
             })
             .then(ip => {
                 document.querySelector('p#v-rising-server').textContent = `${ip}:${56876}`
+                document.querySelector('p#palworld-server-host').textContent = `${server_domain}:${8211}`
                 document.querySelector('p#palworld-server').textContent = `${ip}:${8211}`
             })
             .catch(err => console.error(err));
