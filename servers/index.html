@@ -21,7 +21,7 @@
         const resolver = new doh.DohResolver('https://1.1.1.1/dns-query');
 
         // lookup the A records for example.com and log the IP addresses to the console
-        resolver.query('ry-unraid.ronyiic.com', 'A')
+        resolver.query(server_domain, 'A')
             .then(response => {
                 if (response.answers.length == 0) {
                     throw Error('No A Record found');
